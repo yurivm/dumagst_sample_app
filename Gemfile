@@ -30,6 +30,7 @@ group :development do
   gem 'jazz_hands', github: "nixme/jazz_hands", branch: "bring-your-own-debugger"
   gem 'pry'
   gem 'pry-nav'
+  gem 'rails_layout', github: 'RailsApps/rails_layout'
 end
 
 group :test, :development do
@@ -42,6 +43,9 @@ group :test do
 end
 
 gem 'haml-rails'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
 #gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 
 # Use ActiveModel has_secure_password

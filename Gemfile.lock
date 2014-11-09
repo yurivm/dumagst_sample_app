@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/RailsApps/rails_layout.git
+  revision: 8d32fcff8201d4aed04362d91d4795a2b70b6b2d
+  specs:
+    rails_layout (1.0.23)
+
+GIT
   remote: git://github.com/nixme/jazz_hands.git
   revision: 5e4b48f145883ecb14b55bf04eacc28ac9662676
   branch: bring-your-own-debugger
@@ -45,9 +51,13 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (3.1.2.20141016)
+      execjs
     awesome_print (1.2.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.0.1)
+      sass (~> 3.2)
     builder (3.2.2)
     capybara (2.4.4)
       mime-types (>= 1.16)
@@ -204,6 +214,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
+  bootstrap-sass
   capybara
   coffee-rails (~> 4.0.0)
   haml-rails
@@ -214,6 +226,7 @@ DEPENDENCIES
   pry
   pry-nav
   rails (= 4.1.7)
+  rails_layout!
   rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
