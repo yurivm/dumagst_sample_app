@@ -11,9 +11,9 @@
   %tbody
     - if @users.empty?
       %tr
-        %td No users yet! Did you seed the database?
+        %td{colspan: 6} No users yet! Did you seed the database?
     - else
-      - @users.each_with_index do |user, index|
+      - @users do |user|
         %tr
           %td=user.id
           %td=user.age

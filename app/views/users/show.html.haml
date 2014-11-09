@@ -1,2 +1,68 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
+%h1 
+  User 
+  = @user.id
+
+%table.table.table-hover
+  %thead
+    %th ID
+    %th Age
+    %th Occupation
+    %th Zip Code
+    %th Rated Movies
+  %tbody
+    %tr
+      %td=@user.id
+      %td=@user.age
+      %td=@user.occupation
+      %td=@user.zip_code
+      %td=@user.rated_movies.count
+
+
+%h2
+  Ratings
+
+%table.table.table-hover
+  %thead
+    %th Movie ID
+    %th Movie Title
+    %th Released At
+    %th Imdb URL
+    %th Rating
+  %tbody
+    - if @user.ratings.empty?
+      %tr
+        %td{colspan: 5} This user did not rate any movies
+    - else
+      - @user.ratings.by_rating_desc.each do |rating|
+        - movie = rating.movie
+        %tr
+          %td=movie.id
+          %td=movie.title
+          %td=movie.released_at
+          %td=link_to movie.imdb_url, movie.imdb_url
+          %td=rating.rating
+
+%h2
+  Recommendations
+
+TODO
+/ %table.table.table-hover
+/   %thead
+/     %th Movie ID
+/     %th Movie Title
+/     %th Released At
+/     %th Imdb URL
+/     %th Rating
+/   %tbody
+/     - if @user.ratings.empty?
+/       %tr
+/         %td{colspan: 5} This user did not rate any movies
+/     - else
+/       - @user.ratings.by_rating_desc.each do |rating|
+/         - movie = rating.movie
+/         %tr
+/           %td=movie.id
+/           %td=movie.title
+/           %td=movie.released_at
+/           %td=link_to movie.imdb_url, movie.imdb_url
+/           %td=rating.rating
