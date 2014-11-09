@@ -45,6 +45,7 @@ end
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'will_paginate-bootstrap'
 
 #gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 
