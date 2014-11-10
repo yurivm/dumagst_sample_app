@@ -21,6 +21,12 @@ GIT
       pry-stack_explorer (~> 0.4.9)
       railties (>= 3.0, < 5.0)
 
+PATH
+  remote: ../dumagst
+  specs:
+    dumagst (0.0.1)
+      redis
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -154,6 +160,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
+    redis (3.1.0)
     rspec-core (3.0.4)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.4)
@@ -221,6 +228,7 @@ DEPENDENCIES
   bootstrap-sass
   capybara
   coffee-rails (~> 4.0.0)
+  dumagst!
   haml-rails
   jazz_hands!
   jbuilder (~> 2.0)

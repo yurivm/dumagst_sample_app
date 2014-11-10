@@ -7,6 +7,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    engine = Dumagst::Engines::JaccardEngine.new(engine_key: "jaccard_native_similarity")
+    @product_recommendations = engine.recommend_products(@user.id)
+    @user_recommendations = engine.recommend_users(@user.id)
   end
 
   private
