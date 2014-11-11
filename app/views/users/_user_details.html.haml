@@ -1,0 +1,14 @@
+%table.table.table-hover
+  %thead
+    %th ID
+    %th Age
+    %th Occupation
+    %th Zip Code
+    %th Rated Movies
+  %tbody
+    %tr
+      %td=@user.id
+      %td=@user.age
+      %td=@user.occupation
+      %td=@user.zip_code
+      %td=@user.rated_movies.count

@@ -7,7 +7,8 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
+      = link_to 'Users with Recommendations', with_recommendations_users_path, class: 'navbar-brand'
+      = link_to 'All Users', users_path, class: 'navbar-brand'
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
         = render 'layouts/navigation_links'

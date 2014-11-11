@@ -1,5 +1,3 @@
-%h2= @title.present? ? @title : "Users"
-
 %table.table.table-hover
   %thead
     %th ID
@@ -7,20 +5,22 @@
     %th Occupation
     %th Zip Code
     %th Rated Movies
+    %th Score
     %th Actions
   %tbody
-    - if @users.empty?
+    - if @user_recommendations.empty?
       %tr
-        %td{colspan: 6} No users yet! Did you seed the database?
+        %td{colspan: 6} Could not find similar users for this user.
     - else
-      - @users.each do |user|
+      - @user_recommendations.each do |recommendation|
+        - user = User.find(recommendation.user_id)
         %tr
           %td=link_to user.id, user_path(user)
           %td=user.age
           %td=user.occupation
           %td=user.zip_code
           %td=user.rated_movies.count
+          %td=normalized_score(recommendation.score)
           %td
             = link_to "Show", user_path(user)
 
-= will_paginate @users, renderer: BootstrapPagination::Rails

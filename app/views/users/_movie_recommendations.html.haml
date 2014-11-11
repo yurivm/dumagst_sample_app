@@ -1,0 +1,18 @@
+%table.table.table-hover
+  %thead
+    %th Movie ID
+    %th Movie Title
+    %th Imdb URL
+    %th Score
+  %tbody
+    - if @product_recommendations.empty?
+      %tr
+        %td{colspan: 5} Could not recommend any movies for this user.
+    - else
+      - @product_recommendations.each do |recommendation|
+        - movie = Movie.find(recommendation.product_id)
+        %tr
+          %td=recommendation.product_id
+          %td=movie.title
+          %td=link_to movie.imdb_url, movie.imdb_url
+          %td=normalized_score(recommendation.score)

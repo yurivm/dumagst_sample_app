@@ -1,0 +1,20 @@
+%table.table.table-hover
+  %thead
+    %th Movie ID
+    %th Movie Title
+    %th Released At
+    %th Imdb URL
+    %th Rating
+  %tbody
+    - if @user.ratings.empty?
+      %tr
+        %td{colspan: 5} This user did not rate any movies
+    - else
+      - @user.ratings.likes.by_rating_desc.each do |rating|
+        - movie = rating.movie
+        %tr
+          %td=movie.id
+          %td=movie.title
+          %td=movie.released_at
+          %td=link_to movie.imdb_url, movie.imdb_url
+          %td=rating.rating
